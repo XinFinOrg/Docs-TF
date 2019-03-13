@@ -44,6 +44,7 @@
     position: relative;
     flex-wrap: wrap;
     width: 100%;
+    overflow :auto;
 }
 
 .md-fenced-code-tabs input {
