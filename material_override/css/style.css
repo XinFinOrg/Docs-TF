@@ -32,11 +32,9 @@
 
 .md-fenced-code-tabs {
     box-sizing: border-box;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
     max-width: 100%;
-    border-radius: .2rem;
-    overflow: auto;
- 
+    /*box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+    border-radius: .2rem;*/
 }
 
 .md-fenced-code-tabs {
@@ -81,3 +79,22 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+
+<!-- newly added css -->
+.code-tabpanel {
+    padding:20px;
+	background-color: #FFFFFF;
+	border: 1px solid rgb(230, 236, 241);	
+}
+.md-fenced-code-tabs label {
+    margin-bottom: -2px;
+	border: 1px solid rgb(230, 236, 241);
+    border-bottom: none;
+}
+.md-fenced-code-tabs input:checked + label {
+    color: #03a9f4;
+    border-bottom: none!important;
+	background-color: #FFFFFF;
+}
+<!-- newly added css -->
