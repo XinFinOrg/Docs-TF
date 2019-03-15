@@ -49,9 +49,10 @@ repo_name: XinFinOrg/Docs-TF
 nav:
     - Introduction: index.md
     - Getting Started:
-        - Guide/how_to_setup.md
-        - Guide/SME-API.md
-        - Guide/API.md
+        - How to Setup: Guide/how_to_setup.md
+        - Conduct POC: Guide/conduct-poc.md
+        - SME API: Guide/SME-API.md
+        - API: Guide/API.md
     - Financial Instruments:
         - FinIns/Invoices.md
         - FinIns/Bonds.md
