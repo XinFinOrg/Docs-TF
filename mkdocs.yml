@@ -50,6 +50,7 @@ nav:
     - Introduction: index.md
     - Getting Started:
         - Guide/how_to_setup.md
+        - Guide/SME-API.md
         - Guide/API.md
     - Financial Instruments:
         - FinIns/Invoices.md

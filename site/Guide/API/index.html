@@ -63,23 +63,15 @@
                     
     <a class="" href="../how_to_setup/">How to setup</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../SME-API/">SME API</a>
+                </li>
                 <li class=" current">
                     
     <a class="current" href="./">API</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-    
-
-    <li class="toctree-l3"><a href="#authentication">Authentication</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#http-request">HTTP Request</a></li>
-        
-        </ul>
-    
-
     </ul>
                 </li>
     </ul>
@@ -176,26 +168,419 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>Welcome to the SME API.</p>
-<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
-<p>A JSON Web Token is used to send information that can be verified and trusted by <strong>means</strong> of a digital signature. It comprises a compact and URL-safe JSON object, which is cryptographically signed to verify its authenticity, and which can also be encrypted if the payload contains sensitive information.</p>
-<p>Application may request to access routes, services, or resources on behalf of that user. To do so, it uses an access token, which is in the form of a <strong>JWT</strong> token. user has to provide <strong>JWT</strong> token in header as a authorization in every subsequent request after login.</p>
-<p><strong>Authentication</strong></p>
-<p>Authenticate API in environment with token in response</p>
-<h3 id="http-request">HTTP Request<a class="headerlink" href="#http-request" title="Permanent link">&para;</a></h3>
-<p><code>POST 5.133.176.54:82/api/v1.0/auth/authenticate</code></p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-0-0_Request-panel role=tab><label for=tab-group-0-0_Request class=code-tab-label data-lang=Request id=tab-group-0-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-0-0_Request-panel aria-labelledby=tab-group-0-0_Request-label><div class=codehilite><pre><span></span> user           string                API Key or any secret key
+                <p><strong>POST- Add Customers</strong></p>
+<p>This endpoint allows you to add customers.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Customer/MasterAdd</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-0-0_Request-panel role=tab><label for=tab-group-0-0_Request class=code-tab-label data-lang=Request id=tab-group-0-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-0-0_Request-panel aria-labelledby=tab-group-0-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
  REQUIRED
+
+Body Parameters
+
+ emailid            string                Email ID of Customer
+ REQUIRED
+
+ designationid      string                Designation
+ REQUIRED
+
+ mobileno           number                Mobile Number
+ REQUIRED
+
+ lastname           string                Last Name
+ REQUIRED
+
+ firstname          string                First Name
+ REQUIRED
+
+ noofemp            number                Number of Employees
+ OPTIONAL
+
+ annturnover        number                Turn over of Company
+ OPTIONAL
+
+ currencyid         string                Currency of Country
+ OPTIONAL
+
+ website            string                Website Name
+ OPTIONAL
+
+ inccountryid       string                Country ID
+ REQUIRED
+
+ telno              number                Contact Number
+ REQUIRED
+
+ busactivity        string                Business Activity
+ OPTIONAL
+
+ incdate            string                Incorporation Date
+ REQUIRED
+
+ licauth            string                License Authority Name 
+ REQUIRED
+
+ licexpdate         string                Expiration date of license
+ REQUIRED
+
+ licno              string                License number
+ OPTIONAL
+
+ name               string                Name of customer as on trade license
+ OPTIONAL
+
+ Companytypeid      integar               Type of Company 
+ OPTIONAL
+
+ customertypeid     integar               Type of Customer
+ OPTIONAL
 </pre></div></div><input name=tab-group-0 type=radio id=tab-group-0-1_Response class=code-tab data-lang=Response aria-controls=tab-group-0-1_Response-panel role=tab><label for=tab-group-0-1_Response class=code-tab-label data-lang=Response id=tab-group-0-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-0-1_Response-panel aria-labelledby=tab-group-0-1_Response-label><div class=codehilite><pre><span></span>200: OK
 {
     &quot;success&quot;: true,
     &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDk1MzEzNTIsImV4cCI6MTU0OTYxNzc1Mn0.6cTXghU1IdDreucri4nQKK-Q2HjnHgL7CtTKmvYTRzo&quot;
 }
+
+
 403: Forbidden
 {
     &quot;success&quot;: false,
     &quot;message&quot;: &quot;403 - Invalid API secret key.&quot;
+}
+</pre></div></div></div>
+
+<p><strong>POST- Other Details of Customer</strong></p>
+<p>This endpoint allows us to add more details of Customer.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Customer/DetailsAdd</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-1-0_Request-panel role=tab><label for=tab-group-1-0_Request class=code-tab-label data-lang=Request id=tab-group-1-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-1-0_Request-panel aria-labelledby=tab-group-1-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
+ REQUIRED
+
+Body Parameters
+
+ tempcustomerid     number                Customer ID
+ REQUIRED
+
+ name               string                Customer Name
+ REQUIRED
+
+ countryid          string                Country Code
+ REQUIRED
+
+ website            string                Website Name
+ OPTIONAL
+
+ currencyid         string                Currency of Country
+ OPTIONAL
+
+ annsales           number                Annual Sale Volume
+ OPTIONAL
+
+ commterms          string                Commercial Terms
+ REQUIRED
+
+ firstname          string                First Name
+ REQUIRED
+
+ lastname           string                Last Name
+ REQUIRED
+
+ designationid      string                Designation of Customer
+ REQUIRED
+
+ otherdesignation   string                Other Designation
+ REQUIRED
+
+ mobileno           number                Mobile Number
+ REQUIRED
+
+ emailid            string                Email ID of Customer
+ REQUIRED
+
+ otherindustry      string                Other Industry Details
+ OPTIONAL
+
+ othercommterms     string                Other Commercials Terms
+ REQUIRED
+</pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-1_Response class=code-tab data-lang=Response aria-controls=tab-group-1-1_Response-panel role=tab><label for=tab-group-1-1_Response class=code-tab-label data-lang=Response id=tab-group-1-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-1-1_Response-panel aria-labelledby=tab-group-1-1_Response-label><div class=codehilite><pre><span></span>200: OK
+{
+    &quot;success&quot;: true,
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDk1MzEzNTIsImV4cCI6MTU0OTYxNzc1Mn0.6cTXghU1IdDreucri4nQKK-Q2HjnHgL7CtTKmvYTRzo&quot;
+}
+
+
+403: Forbidden
+{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;403 - Invalid API secret key.&quot;
+}
+</pre></div></div></div>
+
+<p><strong>GET- Customer Details</strong></p>
+<p>Get all the Details of the Customer.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Customer/MasterListAll/0</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-2-0_Request-panel role=tab><label for=tab-group-2-0_Request class=code-tab-label data-lang=Request id=tab-group-2-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-2-0_Request-panel aria-labelledby=tab-group-2-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
+ REQUIRED
+</pre></div></div><input name=tab-group-2 type=radio id=tab-group-2-1_Response class=code-tab data-lang=Response aria-controls=tab-group-2-1_Response-panel role=tab><label for=tab-group-2-1_Response class=code-tab-label data-lang=Response id=tab-group-2-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-2-1_Response-panel aria-labelledby=tab-group-2-1_Response-label><div class=codehilite><pre><span></span>200: OK
+
+{
+        &quot;tempcustomerid&quot;: 1,
+
+        &quot;uniquekey&quot;: &quot;IND00000000000000001&quot;,
+
+        &quot;name&quot;: &quot;XYZ&quot;,
+        &quot;customertypeid&quot;: 1,
+
+        &quot;companytypeid&quot;: 4,
+
+        &quot;othercompanytype&quot;: &quot;&quot;,
+
+        &quot;licno&quot;: &quot;rwetre&quot;,
+
+        &quot;licexpdate&quot;: &quot;2019-02-11T18:30:00.000Z&quot;,
+
+        &quot;licauth&quot;: &quot;fddg&quot;,
+
+        &quot;inccountryid&quot;: 101,
+
+        &quot;incdate&quot;: &quot;2019-02-01T18:30:00.000Z&quot;,
+
+        &quot;busactivity&quot;: &quot;test&quot;,
+
+        &quot;telno&quot;: &quot;+213345345&quot;,
+
+        &quot;website&quot;: &quot;test.com&quot;,
+
+        &quot;currencyid&quot;: 2,
+
+        &quot;annturnover&quot;: 34535,
+
+        &quot;noofemp&quot;: &quot;434&quot;,
+
+        &quot;firstname&quot;: &quot;test&quot;,
+
+        &quot;lastname&quot;: &quot;test&quot;,
+        &quot;mobileno&quot;: &quot;+971435353&quot;,
+
+        &quot;designationid&quot;: 17,
+
+        &quot;otherdesignation&quot;: &quot;&quot;,
+        &quot;emailid&quot;: &quot;test@test.com&quot;,
+
+        &quot;status&quot;: &quot;RR&quot;,
+
+        &quot;createdate&quot;: &quot;2019-02-04T21:58:19.560Z&quot;,
+
+        &quot;createip&quot;: &quot;::ffff:5.133.176.54&quot;
+}
+</pre></div></div></div>
+
+<p><strong>GET- Company Type List</strong></p>
+<p>Get Company Type List.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Common/CompanyTypeList/0</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-3-0_Request-panel role=tab><label for=tab-group-3-0_Request class=code-tab-label data-lang=Request id=tab-group-3-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-3-0_Request-panel aria-labelledby=tab-group-3-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
+ REQUIRED
+</pre></div></div><input name=tab-group-3 type=radio id=tab-group-3-1_Response class=code-tab data-lang=Response aria-controls=tab-group-3-1_Response-panel role=tab><label for=tab-group-3-1_Response class=code-tab-label data-lang=Response id=tab-group-3-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-3-1_Response-panel aria-labelledby=tab-group-3-1_Response-label><div class=codehilite><pre><span></span>200: OK
+
+{
+        &quot;companytypeid&quot;: 4,
+
+        &quot;companytypename&quot;: &quot;General Partnership&quot;,
+
+        &quot;isactive&quot;: true,
+
+        &quot;createby&quot;: 1,
+
+        &quot;createdate&quot;: &quot;2018-12-19T14:19:15.190Z&quot;,
+
+        &quot;createip&quot;: &quot;192.168.1.1&quot;,
+
+        &quot;updateby&quot;: 1,
+
+        &quot;updatedate&quot;: &quot;2018-12-19T14:19:15.190Z&quot;,
+
+        &quot;updateip&quot;: &quot;192.168.1.1&quot;
+}
+</pre></div></div></div>
+
+<p><strong>GET- Country List</strong></p>
+<p>Get Country List.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Common/CountryList/0</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-4-0_Request-panel role=tab><label for=tab-group-4-0_Request class=code-tab-label data-lang=Request id=tab-group-4-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-4-0_Request-panel aria-labelledby=tab-group-4-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
+ REQUIRED
+</pre></div></div><input name=tab-group-4 type=radio id=tab-group-4-1_Response class=code-tab data-lang=Response aria-controls=tab-group-4-1_Response-panel role=tab><label for=tab-group-4-1_Response class=code-tab-label data-lang=Response id=tab-group-4-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-4-1_Response-panel aria-labelledby=tab-group-4-1_Response-label><div class=codehilite><pre><span></span>200: OK
+
+{
+        &quot;countryid&quot;: 13,
+
+        &quot;countrycode&quot;: &quot;AUS&quot;,
+
+        &quot;countryname&quot;: &quot;Australia&quot;,
+
+        &quot;isactive&quot;: true,
+
+        &quot;createby&quot;: 1,
+
+        &quot;createdate&quot;: &quot;2018-12-19T14:24:39.050Z&quot;,
+
+        &quot;createip&quot;: &quot;192.168.1.1&quot;,
+
+        &quot;updateby&quot;: 1,
+
+        &quot;updatedate&quot;: &quot;2018-12-19T14:24:39.050Z&quot;,
+
+        &quot;updateip&quot;: &quot;192.168.1.1&quot;
+}
+</pre></div></div></div>
+
+<p><strong>GET- Currency List</strong></p>
+<p>Get Currency List.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Common/CurrencyList/0</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-5-0_Request-panel role=tab><label for=tab-group-5-0_Request class=code-tab-label data-lang=Request id=tab-group-5-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-5-0_Request-panel aria-labelledby=tab-group-5-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
+ REQUIRED
+</pre></div></div><input name=tab-group-5 type=radio id=tab-group-5-1_Response class=code-tab data-lang=Response aria-controls=tab-group-5-1_Response-panel role=tab><label for=tab-group-5-1_Response class=code-tab-label data-lang=Response id=tab-group-5-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-5-1_Response-panel aria-labelledby=tab-group-5-1_Response-label><div class=codehilite><pre><span></span>200: OK
+
+{
+        &quot;countryid&quot;: 11,
+
+        &quot;countrycode&quot;: &quot;EUR&quot;,
+
+        &quot;countryname&quot;: &quot;EURO&quot;,
+
+        &quot;isactive&quot;: true,
+
+        &quot;createby&quot;: 1,
+
+        &quot;createdate&quot;: &quot;2018-12-19T14:24:39.050Z&quot;,
+
+        &quot;createip&quot;: &quot;192.168.1.1&quot;,
+
+        &quot;updateby&quot;: 1,
+
+        &quot;updatedate&quot;: &quot;2018-12-19T14:24:39.050Z&quot;,
+
+        &quot;updateip&quot;: &quot;192.168.1.1&quot;
+}
+</pre></div></div></div>
+
+<p><strong>GET- Customer Type List</strong></p>
+<p>Get Customer Type List.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Common/CustomerTypeList/0</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-6><input name=tab-group-6 type=radio id=tab-group-6-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-6-0_Request-panel role=tab><label for=tab-group-6-0_Request class=code-tab-label data-lang=Request id=tab-group-6-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-6-0_Request-panel aria-labelledby=tab-group-6-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
+ REQUIRED
+</pre></div></div><input name=tab-group-6 type=radio id=tab-group-6-1_Response class=code-tab data-lang=Response aria-controls=tab-group-6-1_Response-panel role=tab><label for=tab-group-6-1_Response class=code-tab-label data-lang=Response id=tab-group-6-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-6-1_Response-panel aria-labelledby=tab-group-6-1_Response-label><div class=codehilite><pre><span></span>200: OK
+
+{
+        &quot;customertypeid&quot;: 1,
+
+        &quot;code&quot;: &quot;     &quot;,
+
+        &quot;name&quot;: &quot;Beneficiery&quot;,
+
+        &quot;isactive&quot;: true,
+
+        &quot;createby&quot;: 1,
+
+        &quot;createdate&quot;: &quot;2018-12-19T14:22:59.770Z&quot;,
+
+        &quot;createip&quot;: &quot;192.168.1.1&quot;,
+
+        &quot;updateby&quot;: 1,
+
+        &quot;updatedate&quot;: &quot;2018-12-19T14:22:59.770Z&quot;,
+
+        &quot;updateip&quot;: &quot;192.168.1.1&quot;
+}
+
+{
+        &quot;customertypeid&quot;: 2,
+
+        &quot;code&quot;: &quot;     &quot;,
+
+        &quot;name&quot;: &quot;Suppliers&quot;,
+
+        &quot;isactive&quot;: true,
+
+        &quot;createby&quot;: 1,
+
+        &quot;createdate&quot;: &quot;2018-12-19T14:22:59.770Z&quot;,
+
+        &quot;createip&quot;: &quot;192.168.1.1&quot;,
+
+        &quot;updateby&quot;: 1,
+
+        &quot;updatedate&quot;: &quot;2018-12-19T14:22:59.770Z&quot;,
+
+        &quot;updateip&quot;: &quot;192.168.1.1&quot;
+}
+</pre></div></div></div>
+
+<p><strong>GET- Customer's Designation List</strong></p>
+<p>Get Customer's Designation List.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Common/IndustryList/0</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-7><input name=tab-group-7 type=radio id=tab-group-7-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-7-0_Request-panel role=tab><label for=tab-group-7-0_Request class=code-tab-label data-lang=Request id=tab-group-7-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-7-0_Request-panel aria-labelledby=tab-group-7-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
+ REQUIRED
+</pre></div></div><input name=tab-group-7 type=radio id=tab-group-7-1_Response class=code-tab data-lang=Response aria-controls=tab-group-7-1_Response-panel role=tab><label for=tab-group-7-1_Response class=code-tab-label data-lang=Response id=tab-group-7-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-7-1_Response-panel aria-labelledby=tab-group-7-1_Response-label><div class=codehilite><pre><span></span>200: OK
+
+{
+        &quot;designationid&quot;: 9,
+        &quot;designationname&quot;: &quot;Administration Manager&quot;,
+
+        &quot;isactive&quot;: true,
+
+        &quot;createby&quot;: 1,
+
+        &quot;createdate&quot;: &quot;2018-12-19T14:08:21.000Z&quot;,
+
+        &quot;createip&quot;: &quot;192.168.1.1&quot;,
+
+        &quot;updateby&quot;: 1,
+
+        &quot;updatedate&quot;: &quot;2018-12-19T14:08:21.000Z&quot;,
+
+        &quot;updateip&quot;: &quot;192.168.1.1&quot;
+}
+</pre></div></div></div>
+
+<p><strong>GET- Industry List</strong></p>
+<p>Get Industry List.</p>
+<p><code>http://5.133.176.54:82/api/v1.0/Common/IndustryList/0</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_Request checked=checked class=code-tab data-lang=Request aria-controls=tab-group-8-0_Request-panel role=tab><label for=tab-group-8-0_Request class=code-tab-label data-lang=Request id=tab-group-8-0_Request-label>Request</label><div class=code-tabpanel role=tabpanel data-lang=Request id=tab-group-8-0_Request-panel aria-labelledby=tab-group-8-0_Request-label><div class=codehilite><pre><span></span>Headers
+
+ authorisation           string                JWT Token
+ REQUIRED
+</pre></div></div><input name=tab-group-8 type=radio id=tab-group-8-1_Response class=code-tab data-lang=Response aria-controls=tab-group-8-1_Response-panel role=tab><label for=tab-group-8-1_Response class=code-tab-label data-lang=Response id=tab-group-8-1_Response-label>Response</label><div class=code-tabpanel role=tabpanel data-lang=Response id=tab-group-8-1_Response-panel aria-labelledby=tab-group-8-1_Response-label><div class=codehilite><pre><span></span>200: OK
+
+{
+        &quot;industryid&quot;: 1,
+
+        &quot;industryname&quot;: &quot;Advertising and marketing / printing and publishing&quot;,
+
+        &quot;isactive&quot;: true,
+
+        &quot;createby&quot;: 1,
+
+        &quot;createdate&quot;: &quot;2018-12-19T14:12:57.990Z&quot;,
+
+        &quot;createip&quot;: &quot;192.168.1.1&quot;,
+
+        &quot;updateby&quot;: 1,
+
+        &quot;updatedate&quot;: &quot;2018-12-19T14:12:57.990Z&quot;,
+
+        &quot;updateip&quot;: &quot;192.168.1.1&quot;
 }
 </pre></div></div></div>
               
@@ -208,7 +593,7 @@
         <a href="../../FinIns/Invoices/" class="btn btn-neutral float-right" title="Invoices">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../how_to_setup/" class="btn btn-neutral" title="How to setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../SME-API/" class="btn btn-neutral" title="SME API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -236,7 +621,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../how_to_setup/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../SME-API/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../../FinIns/Invoices/" style="color: #fcfcfc">Next &raquo;</a></span>
