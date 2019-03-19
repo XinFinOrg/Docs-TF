@@ -1,0 +1,1 @@
+**[Conduct of POC](http://docs.infactor.io/Guide/Conduct_POC/)**
