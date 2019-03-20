@@ -7,11 +7,6 @@ Bond Smart contract is real life bond creation and exchange platform based on Xi
 
 ![overview](/assets/bond.jpg)
 
-
-##**Current Challenges**
-
-##**Advantages of Blockchain Bond**
-
 ##**How it Works**
 
 **[Create Bond](https://demo.tradefinex.org/publicv/bond_create)**

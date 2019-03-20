@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,600,700,900');
+
 .md-header {
   background-color: #1a1f36 !important
 }
@@ -80,6 +82,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
 	overflow-x: auto;
+	font-family: 'Source Code Pro', monospace!important;
 	font-size: 13px;
 }
 
