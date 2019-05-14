@@ -7,6 +7,16 @@ Bond Smart contract is real life bond creation and exchange platform based on Xi
 
 ![overview](/assets/bond.jpg)
 
+##**Supported Tasks**
+
+You can perform the following tasks in the Smart Bond UI:
+
+###**Account Creation and Updates**
+
+1. Create an Account (coming soon)
+2. Sign in with Existing Account (coming soon)
+3. Create Bond and deploy on Blockchain
+
 ##**How it Works**
 
 **[Create Bond](https://demo.tradefinex.org/publicv/bond_create)**
@@ -14,28 +24,33 @@ Bond Smart contract is real life bond creation and exchange platform based on Xi
 
 
 
-To create a bond type in bond details like Bond Name, Ticker Symbol, Type of Bond, Number of Decimals allowed and Token Supply. 
+To create a bond type in bond details like Bond Name, Industry, Ticker, ISIN, CUSIP, Moody's, S&P, Fitch, Type of Bond, Number of Decimals, Token Supply etc. 
  If you have a coupon, type in coupon details like Minimum Contribution, Face Value, Coupon, Tenure, Discounted Value.
 
 Click on **[Create Bond](https://demo.tradefinex.org/publicv/bond_create)** tab. 
 
-As soon as you click on **[Create Bond](https://demo.tradefinex.org/publicv/bond_create)** tab, a smart contract will be created after retrieving all the bond data from the blockchain.  The retrieved bond data will have specifics like Order Timestamp, Trader Index, Bond Unique Identification Number, Bond Type, Bond Quantity, and Order Status. The retrieved data will also contain bonds settlement date or the date on which the coupon was purchased. 
+Enter all the details. Click on **Create Button** 
+
+![overview](/assets/CBPOC.png)
+
+**Deploy Bond**
+
+As soon as you click on button, a smart contract will be created after retrieving all the bond data from the user.  The retrieved bond data will have specifics like Order Timestamp, Trader Index, Bond Unique Identification Number, Bond Type, Bond Quantity, and Order Status. The retrieved data will also contain bonds settlement date or the date on which the coupon was purchased. 
 
 
+![overview](/assets/DEP.png)
 
-![overview](/assets/CBPOC.jpg)
-
-**Deploy Bond
-**
-
-Now, click on the **Deploy** tab. A pop will appear saying **Contract Deployment in progress**. Click **Ok**. 
 
 The bond is sent to XinFin Testnet for deployment automatically. 
-As soon as the contract is deployed, the contract will generate a unique address similar to ISIN, CUSIP (Its like your unique identity on XinFin Hybrid Blockchain).
+As soon as the Bond is deployed, the contract will generate a unique address similar to ISIN, CUSIP (Its like your unique identity on XinFin Hybrid Blockchain).
 
-![overview](/assets/DEP.jpg)
 
-![overview](/assets/CDIP.jpg)
+It may take few minutes to deploy your Bond.
+
+A pop will appear saying **Bond Deployment in progress**. Click **Ok**. 
+
+![overview](/assets/CDIP.png)
+
 
 The generated unique address can be used as Identity for smart bond. You can use it for identification purposes and viewing quotes.
 
